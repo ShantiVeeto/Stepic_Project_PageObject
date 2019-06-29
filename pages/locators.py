@@ -1,7 +1,11 @@
 from selenium.webdriver.common.by import By
 
-class MainPageLocators(object):
+class BasePageLocators(object):
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+
+""" class MainPageLocators(object):
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link") """
 
 class LoginPageLocators(object):
     LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
@@ -14,3 +18,4 @@ class ProductPageLocators(object):
     #PRODUCT_ADD_TO_CART = (By.CSS_SELECTOR, ".alert-success .alertinner strong") - не уникален
     PRODUCT_PRICE = (By.CSS_SELECTOR, ".product_main .price_color")
     CART_TOTAL_SUM = (By.CSS_SELECTOR, ".alert-info .alertinner strong")
+    SUCCESS_MESSAGE = (By.XPATH, ".//*[@id='messages']/div[1]/div")
