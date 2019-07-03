@@ -7,7 +7,7 @@ import time
 
 class ProductPage(BasePage):
     def item_add_to_cart(self):
-        assert self.is_element_present(*ProductPageLocators.BUTTON_CART), "Button add to cart is not presented"
+        assert self.is_element_present(*ProductPageLocators.BUTTON_ADD_TO_CART), "Button add to cart is not presented"
         button_cart = self.browser.find_element(*ProductPageLocators.BUTTON_CART)
         button_cart.click()
         
