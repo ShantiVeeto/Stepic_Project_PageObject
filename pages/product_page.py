@@ -8,7 +8,7 @@ import time
 class ProductPage(BasePage):
     def item_add_to_cart(self):
         assert self.is_element_present(*ProductPageLocators.BUTTON_ADD_TO_CART), "Button add to cart is not presented"
-        button_cart = self.browser.find_element(*ProductPageLocators.BUTTON_CART)
+        button_cart = self.browser.find_element(*ProductPageLocators.BUTTON_ADD_TO_CART)
         button_cart.click()
         
     def solve_quiz_and_get_code(self):
@@ -17,7 +17,8 @@ class ProductPage(BasePage):
         answer = str(math.log(abs((12 * math.sin(float(x))))))
         alert.send_keys(answer)
         alert.accept()
-        """#включение второго алерта 
+        """
+        #включение второго алерта 
         try:
             alert = self.browser.switch_to.alert
             print("Your code: {}".format(alert.text))
